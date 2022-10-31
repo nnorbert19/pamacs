@@ -1,0 +1,16 @@
+* {
+  --header: #03045e;
+  --bg_color: #caf0f8;
+  font-size: 1.15rem;
+}
+body {
+  background-color: var(--bg_color);
+}
+.Header {
+  background-color: var(--header);
+  color: white;
+  height: 15vh;
+}
+.container {
+  width: 100vw;
+}
