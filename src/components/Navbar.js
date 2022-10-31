@@ -10,9 +10,7 @@ function Navbar() {
         <div className="Navbar d-flex flex-column m-1">
           <ul class="navbar xl d-flex flex-row justify-content-evenly align-items-center list-unstyled p-0 m-0">
             <li>
-              <a href="#" className="xl">
-                Kezdőlap
-              </a>
+              <a href="#">Kezdőlap</a>
             </li>
             <li>
               <a href="#">Rólunk</a>
