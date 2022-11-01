@@ -44,7 +44,7 @@ function News() {
   };
   return (
     <>
-      <div className="d-flex flex-column justify-content-center align-items-center">
+      <div className="d-flex flex-column justify-content-center align-items-center p-4">
         <h1>Hírek</h1>
         <Slider {...settings} className=" text-center">
           <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
