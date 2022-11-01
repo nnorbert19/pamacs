@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "./CarouselComponent";
 import Introduction from "./Introduction";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Hero() {
   return (
@@ -15,6 +16,7 @@ function Hero() {
           </div>
         </div>
       </div>
+      <hr className="w-75" />
       <Introduction />
     </>
   );
