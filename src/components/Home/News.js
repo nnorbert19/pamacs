@@ -1,8 +1,6 @@
 import React from "react";
 import "./Carousel.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
-import "bootstrap-icons/font/bootstrap-icons.css";
 
 import Slider from "react-slick";
 
@@ -41,6 +39,26 @@ function News() {
     autoplaySpeed: 5000,
     prevArrow: <PreviousBtn />,
     nextArrow: <NextBtn />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 2,
+          dots: false,
+        },
+      },
+    ],
   };
   return (
     <>
