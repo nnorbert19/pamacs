@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -15,9 +16,9 @@ function NavbarComponent() {
   };
   return (
     <>
-      <Navbar expand="lg" variant="dark" className="mb-3 w-100 Header">
+      <Navbar expand="lg" variant="dark" className="w-100 Header sticky-top">
         <Container fluid>
-          <Navbar.Brand href="#">LOGO</Navbar.Brand>
+          <Navbar.Brand className="px-2">LOGO</Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-$'lg'`} />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-$'lg'`}
@@ -31,29 +32,43 @@ function NavbarComponent() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-center flex-grow-1 pe-3">
-                <Nav.Link href="#action1">Kezdőlap</Nav.Link>
-                <Nav.Link href="#action2">Rólunk</Nav.Link>
-                <Nav.Link href="#action2">Kutyáink</Nav.Link>
-                <Nav.Link href="#action2">Hírek</Nav.Link>
+                <Nav.Link as={Link} to="/">
+                  Kezdőlap
+                </Nav.Link>
+                <Nav.Link as={Link} to="/rolunk">
+                  Rólunk
+                </Nav.Link>
+                <Nav.Link as={Link} to="/kutyaink">
+                  Kutyáink
+                </Nav.Link>
+                <Nav.Link as={Link} to="/hirek">
+                  Hírek
+                </Nav.Link>
 
                 <NavDropdown
                   title="Kölykök"
-                  id={`offcanvasNavbarDropdown-expand-$'lg'`}
+                  id={`offcanvasNavbarDropdown1-expand-$'lg'`}
                   show={show}
                   onMouseEnter={showDropdown}
                   onMouseLeave={hideDropdown}
                 >
-                  <NavDropdown.Item href="#action3">
+                  <NavDropdown.Item as={Link} to="/tervezett-alom">
                     Tervezett alom
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">
+                  <NavDropdown.Item as={Link} to="/elerheto-kolykok">
                     Elérhető kölykök
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action5">Almok</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to="/almok">
+                    Almok
+                  </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="#action2">Galéria</Nav.Link>
-                <Nav.Link href="#action2">Puli</Nav.Link>
-                <Nav.Link href="#action2">Kapcsolat</Nav.Link>
+
+                <Nav.Link as={Link} to="/galeria">
+                  Galéria
+                </Nav.Link>
+                <Nav.Link as={Link} to="/kapcsolat">
+                  Kapcsolat
+                </Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

@@ -5,8 +5,8 @@ import Introduction from "./Introduction";
 function Hero() {
   return (
     <>
-      <div className="w-100 container">
-        <div className="row w-100 m-0 p-4">
+      <div className="w-100 ">
+        <div className="row w-100 m-0 pb-4">
           <div className="col-12 col-md-8 p-0 m-0">
             <Carousel />
           </div>
@@ -15,7 +15,6 @@ function Hero() {
           </div>
         </div>
       </div>
-      <hr className="w-75" />
       <Introduction />
     </>
   );

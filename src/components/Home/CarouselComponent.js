@@ -1,5 +1,4 @@
 import React from "react";
-//import "./Carousel.css";
 import Carousel from "react-bootstrap/Carousel";
 import img_a from "../../images/a.jpg";
 import img_b from "../../images/b.jpg";

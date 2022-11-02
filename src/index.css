@@ -4,6 +4,65 @@
   font-size: 1.15rem;
 }
 
+body {
+  background-color: var(--bg_color);
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+}
+
+h1 {
+  font-family: "Courgette", cursive;
+}
+
+/* Divider */
+.divider {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.divider h1 {
+  padding: 0.5rem;
+}
+.divider span {
+  width: 100%;
+  height: 10px;
+  -moz-background-size: 100% 2px;
+  background-size: 100% 2px;
+  background-position: 0 0, 0 100%;
+  background-repeat: no-repeat;
+}
+.divider span:first-child {
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    from(transparent),
+    to(#000)
+  );
+  background-image: -webkit-linear-gradient(180deg, transparent, #000);
+  background-image: -moz-linear-gradient(180deg, transparent, #000);
+  background-image: -o-linear-gradient(180deg, transparent, #000);
+  background-image: linear-gradient(90deg, transparent, #000);
+}
+.divider span:last-child {
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    from(#000),
+    to(transparent)
+  );
+  background-image: -webkit-linear-gradient(180deg, #000, transparent);
+  background-image: -moz-linear-gradient(180deg, #000, transparent);
+  background-image: -o-linear-gradient(180deg, #000, transparent);
+  background-image: linear-gradient(90deg, #000, transparent);
+}
+
 .Header {
   background-color: var(--header);
   color: white;
@@ -12,13 +71,8 @@
 .footer {
   background-color: var(--header);
   color: white;
-}
-body {
-  background-color: var(--bg_color);
-  margin: 0;
-  font-family: "Roboto";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 10vh;
 }
 
 code {

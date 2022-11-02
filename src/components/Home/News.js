@@ -1,5 +1,4 @@
 import React from "react";
-import "./Carousel.css";
 import Card from "react-bootstrap/Card";
 
 import Slider from "react-slick";
@@ -8,7 +7,7 @@ import "./slick.css";
 import "./slick-theme.css";
 
 function PreviousBtn(props) {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
       <h1>
@@ -18,7 +17,7 @@ function PreviousBtn(props) {
   );
 }
 function NextBtn(props) {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
       <h1>
@@ -62,8 +61,12 @@ function News() {
   };
   return (
     <>
-      <div className="d-flex flex-column justify-content-center align-items-center p-4">
-        <h1>Hírek</h1>
+      <div className="d-flex flex-column justify-content-center align-items-center w-100 p-4">
+        <div className="divider">
+          <span />
+          <h1>Hírek</h1>
+          <span />
+        </div>
         <Slider {...settings} className=" text-center">
           <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
             <Card.Img variant="top" src="holder.js/100px180" />
