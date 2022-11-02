@@ -27,6 +27,8 @@ h1 {
 }
 .divider h1 {
   padding: 0.5rem;
+  inline-size: min-content;
+  white-space: nowrap;
 }
 .divider span {
   width: 100%;

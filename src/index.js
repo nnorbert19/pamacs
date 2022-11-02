@@ -14,6 +14,7 @@ import AvailablePuppies from "./pages/AvailablePuppies";
 import Litters from "./pages/Litters";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import NoPage from "./pages/NoPage";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="almok" element={<Litters />} />
           <Route path="galeria" element={<Gallery />} />
           <Route path="kapcsolat" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
