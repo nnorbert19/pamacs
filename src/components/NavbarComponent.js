@@ -25,11 +25,7 @@ function NavbarComponent() {
             aria-labelledby={`offcanvasNavbarLabel-expand-$'lg'`}
             placement="end"
           >
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-$'lg'`}>
-                Offcanvas
-              </Offcanvas.Title>
-            </Offcanvas.Header>
+            <Offcanvas.Header closeButton></Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-center flex-grow-1 pe-3">
                 <Nav.Link as={Link} to="/">

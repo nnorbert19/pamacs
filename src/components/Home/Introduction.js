@@ -11,17 +11,17 @@ function Introduction() {
           <span />
         </div>
 
-        <div className="w-75 d-flex align-items-center justify-content-center flex-row">
-          <p>
+        <div className="w-75 row d-flex align-items-center justify-content-center flex-row p-3 ">
+          <p className="p-5 col-12 col-md-8 h-100 d-flex align-items-center justify-content-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            imperdiet massa nec ligula congue, in commodo augue maximus.
-            Suspendisse in purus nec tellus convallis ultrices. Maecenas est
-            nulla, luctus vitae elit ac, efficitur maximus quam. In iaculis
-            mauris congue metus condimentum, sed porttitor ante interdum.
-            Phasellus id eros et enim dapibus volutpat vel eget lacus. Integer
-            faucibus finibus ante et cursus. Vivamus vulputate scelerisque orci.
+            imperdiet massa nec ligula congue, in commodo augue maximus. Vivamus
+            vulputate scelerisque orci.
           </p>
-          <img src={img} className="w-25" alt="bemutatkozó kép"></img>
+          <img
+            src={img}
+            className="col-12 col-md-4 h-100"
+            alt="bemutatkozó kép"
+          ></img>
         </div>
       </div>
     </>

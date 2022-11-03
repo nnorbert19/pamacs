@@ -1,10 +1,12 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 import Slider from "react-slick";
 
-import "./slick.css";
-import "./slick-theme.css";
+import "../styles/card.css";
+import "../styles/slick.css";
+import "../styles/slick-theme.css";
 
 function PreviousBtn(props) {
   const { className, onClick } = props;
@@ -34,7 +36,7 @@ function News() {
     speed: 250,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    //autoplay: true,
     autoplaySpeed: 5000,
     prevArrow: <PreviousBtn />,
     nextArrow: <NextBtn />,
@@ -53,7 +55,7 @@ function News() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 2,
+          initialSlide: 1,
           dots: false,
         },
       },
@@ -67,87 +69,87 @@ function News() {
           <h1>Hírek</h1>
           <span />
         </div>
-        <Slider {...settings} className=" text-center">
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
+        <Slider {...settings} className="p-3">
+          <div className="d-flex justify-content-center align-items-center">
+            <Card className="text-center">
+              <Card.Img
+                variant="top"
+                src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg"
+              />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  <p>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Footer>
+            </Card>
+          </div>{" "}
+          <div className="d-flex justify-content-center align-items-center">
+            <Card className=" text-center">
+              <Card.Img
+                variant="top"
+                src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg"
+              />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  <p>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Footer>
+            </Card>
+          </div>
+          <div className="d-flex justify-content-center align-items-center">
+            <Card className=" text-center">
+              <Card.Img
+                variant="top"
+                src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg"
+              />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  <p>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Footer>
+            </Card>
+          </div>
+          <div className="d-flex justify-content-center align-items-center">
+            <Card className=" text-center">
+              <Card.Img
+                variant="top"
+                src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg"
+              />
+              <Card.Body>
+                <Card.Title>Card Title</Card.Title>
+                <Card.Text>
+                  <p>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Footer>
+            </Card>
+          </div>
         </Slider>
       </div>
     </>
