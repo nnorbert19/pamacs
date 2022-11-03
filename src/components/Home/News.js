@@ -1,10 +1,12 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
+import { useContenful } from "../../ContentfulContext";
+import NewsCardComponent from "./NewsCardComponent";
 
 import Slider from "react-slick";
 
-import "./slick.css";
-import "./slick-theme.css";
+import "../styles/card.css";
+import "../styles/slick.css";
+import "../styles/slick-theme.css";
 
 function PreviousBtn(props) {
   const { className, onClick } = props;
@@ -28,14 +30,17 @@ function NextBtn(props) {
 }
 
 function News() {
+  const { news } = useContenful();
   const settings = {
     dots: true,
     infinite: true,
     speed: 250,
     slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
+    slidesToScroll: 4,
+    //autoplay: true,
     autoplaySpeed: 5000,
+    adaptiveHeight: true,
+    row: 0,
     prevArrow: <PreviousBtn />,
     nextArrow: <NextBtn />,
     responsive: [
@@ -43,7 +48,7 @@ function News() {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
           infinite: true,
           dots: true,
         },
@@ -53,7 +58,7 @@ function News() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 2,
+          initialSlide: 1,
           dots: false,
         },
       },
@@ -67,87 +72,10 @@ function News() {
           <h1>Hírek</h1>
           <span />
         </div>
-        <Slider {...settings} className=" text-center">
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="w-75" style={{ width: "4rem", height: "1rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
+        <Slider {...settings} className="m-3 p-3">
+          {news.map((news, index) => (
+            <NewsCardComponent key={index} news={news} />
+          ))}
         </Slider>
       </div>
     </>
