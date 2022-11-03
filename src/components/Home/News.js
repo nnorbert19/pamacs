@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import { useContenful } from "../../ContentfulContext";
+import NewsCardComponent from "./NewsCardComponent";
 
 import Slider from "react-slick";
 
@@ -30,14 +30,17 @@ function NextBtn(props) {
 }
 
 function News() {
+  const { news } = useContenful();
   const settings = {
     dots: true,
     infinite: true,
     speed: 250,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
     //autoplay: true,
     autoplaySpeed: 5000,
+    adaptiveHeight: true,
+    row: 0,
     prevArrow: <PreviousBtn />,
     nextArrow: <NextBtn />,
     responsive: [
@@ -45,7 +48,7 @@ function News() {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
           infinite: true,
           dots: true,
         },
@@ -69,87 +72,10 @@ function News() {
           <h1>Hírek</h1>
           <span />
         </div>
-        <Slider {...settings} className="p-3">
-          <div className="d-flex justify-content-center align-items-center">
-            <Card className="text-center">
-              <Card.Img
-                variant="top"
-                src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg"
-              />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  <p>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Footer>
-            </Card>
-          </div>{" "}
-          <div className="d-flex justify-content-center align-items-center">
-            <Card className=" text-center">
-              <Card.Img
-                variant="top"
-                src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg"
-              />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  <p>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Footer>
-            </Card>
-          </div>
-          <div className="d-flex justify-content-center align-items-center">
-            <Card className=" text-center">
-              <Card.Img
-                variant="top"
-                src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg"
-              />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  <p>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Footer>
-            </Card>
-          </div>
-          <div className="d-flex justify-content-center align-items-center">
-            <Card className=" text-center">
-              <Card.Img
-                variant="top"
-                src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg"
-              />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  <p>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Footer>
-            </Card>
-          </div>
+        <Slider {...settings} className="m-3 p-3">
+          {news.map((news, index) => (
+            <NewsCardComponent key={index} news={news} />
+          ))}
         </Slider>
       </div>
     </>

@@ -15,25 +15,28 @@ import Litters from "./pages/Litters";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
+import { ContentfulProvider } from "./ContentfulContext";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="rolunk" element={<AboutUs />} />
-          <Route path="kutyaink" element={<OurDogs />} />
-          <Route path="hirek" element={<News />} />
-          <Route path="tervezett-alom" element={<PlannedLitter />} />
-          <Route path="elerheto-kolykok" element={<AvailablePuppies />} />
-          <Route path="almok" element={<Litters />} />
-          <Route path="galeria" element={<Gallery />} />
-          <Route path="kapcsolat" element={<Contact />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ContentfulProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="rolunk" element={<AboutUs />} />
+            <Route path="kutyaink" element={<OurDogs />} />
+            <Route path="hirek" element={<News />} />
+            <Route path="tervezett-alom" element={<PlannedLitter />} />
+            <Route path="elerheto-kolykok" element={<AvailablePuppies />} />
+            <Route path="almok" element={<Litters />} />
+            <Route path="galeria" element={<Gallery />} />
+            <Route path="kapcsolat" element={<Contact />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ContentfulProvider>
   );
 }
 
