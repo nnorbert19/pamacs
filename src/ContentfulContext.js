@@ -9,6 +9,7 @@ export function useContenful() {
 export function ContentfulProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [news, setNews] = useState([]);
+  const [homeCarouselImages, setHomeCarouselImages] = useState([]);
   var contentful = require("contentful");
 
   var client = contentful.createClient({
@@ -38,18 +39,40 @@ export function ContentfulProvider({ children }) {
       console.log(error);
     }
   }
+  async function getHomeCarouselImages() {
+    try {
+      setLoading(true);
+      const entries = await client.getEntries({
+        content_type: "homeImageSlider",
+        select: "fields",
+      });
+
+      const sanitizedEntries = entries.items.map((item) => {
+        const images = item.fields;
+        return {
+          ...item.fields,
+          images,
+        };
+      });
+      setLoading(false);
+      return sanitizedEntries;
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
+  }
 
   useEffect(() => {
-    console.log("valami");
     getNews().then((response) => setNews(response));
-    console.log(news);
+    getHomeCarouselImages().then((response) => setHomeCarouselImages(response));
+    console.log(homeCarouselImages);
   }, []);
 
   const value = {
     news,
+    homeCarouselImages,
     loading,
   };
-  console.log(loading);
   return (
     <ContentfulContext.Provider value={value}>
       {!loading && children}

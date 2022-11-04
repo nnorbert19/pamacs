@@ -12,11 +12,11 @@ function Introduction() {
         </div>
 
         <div className="col-12 col-md-9 row d-flex align-items-center justify-content-center flex-row p-3 ">
-          <p className="pm-5 col-12 col-md-8 d-flex align-items-center justify-content-center">
+          <h2 className="pm-5 col-12 col-md-8 d-flex align-items-center justify-content-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             imperdiet massa nec ligula congue, in commodo augue maximus. Vivamus
             vulputate scelerisque orci.
-          </p>
+          </h2>
           <img
             src={img}
             className="col-12 col-md-4 p-0 mh-50"

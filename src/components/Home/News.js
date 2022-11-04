@@ -13,7 +13,7 @@ function PreviousBtn(props) {
   return (
     <div className={className} onClick={onClick}>
       <h1>
-        <i class="bi bi-caret-left-fill" style={{ color: "black" }}></i>
+        <i className="bi bi-caret-left-fill" style={{ color: "black" }}></i>
       </h1>
     </div>
   );
@@ -23,7 +23,7 @@ function NextBtn(props) {
   return (
     <div className={className} onClick={onClick}>
       <h1>
-        <i class="bi bi-caret-right-fill"></i>
+        <i className="bi bi-caret-right-fill"></i>
       </h1>
     </div>
   );
@@ -35,9 +35,9 @@ function News() {
     dots: true,
     infinite: true,
     speed: 250,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 4,
-    //autoplay: true,
+    autoplay: true,
     autoplaySpeed: 5000,
     adaptiveHeight: true,
     row: 0,
@@ -66,13 +66,13 @@ function News() {
   };
   return (
     <>
-      <div className="d-flex flex-column justify-content-center align-items-center w-100 p-4">
+      <div className="d-flex flex-column justify-content-center align-items-center w-100">
         <div className="divider">
           <span />
           <h1>Hírek</h1>
           <span />
         </div>
-        <Slider {...settings} className="m-3 p-3">
+        <Slider {...settings} className="my-2 py-3">
           {news.map((news, index) => (
             <NewsCardComponent key={index} news={news} />
           ))}

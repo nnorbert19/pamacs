@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 function NewsCardComponent(data) {
   return (
     <div className="d-flex w-100 h-100 justify-content-center">
-      <Card className="card" style={{ width: "90%" }}>
+      <Card className="card d-flex" style={{ width: "90%" }}>
         <Card.Img variant="top" src={data.news.smallImage.fields.file.url} />
         <Card.Body>
           <Card.Title>
@@ -14,7 +14,7 @@ function NewsCardComponent(data) {
           </Card.Title>
           <Card.Text>{data.news.shortText}</Card.Text>
         </Card.Body>
-        <Card.Footer className="d-flex justify-content-end align-self-end mb-auto">
+        <Card.Footer className="d-flex justify-content-center align-self-end mb-auto">
           <Button variant="primary">Go somewhere</Button>
         </Card.Footer>
       </Card>
