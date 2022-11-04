@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useContenful } from "../ContentfulContext";
-import NewsComponent from "../components/News/NewsComponent";
-// main.js
+import NewsListerComponent from "../components/News/NewsListerComponent";
 
 function News() {
   const { news } = useContenful();
@@ -17,7 +16,7 @@ function News() {
       <div className="container">
         <div className="row">
           {news.map((news, index) => (
-            <NewsComponent key={index} news={news} />
+            <NewsListerComponent key={index} news={news} />
           ))}
         </div>
       </div>

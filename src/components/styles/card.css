@@ -1,6 +1,7 @@
 .card {
   display: block;
-  height: 550px;
+  height: 600px;
+  max-width: 300px;
   margin-bottom: 20px;
   line-height: 1.4;
   background-color: #fff;
@@ -19,9 +20,7 @@
   width: 100%;
   transition: all 0.25s ease;
 }
-.card-body {
-  height: 12;
-}
+
 .card-content {
   padding: 15px;
   text-align: left;
@@ -38,4 +37,5 @@
 
 .card-footer {
   bottom: 0;
+  width: 100%;
 }

@@ -1,27 +1,27 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
-import img_a from "../../images/a.jpg";
-import img_b from "../../images/b.jpg";
-import img_c from "../../images/c.jpg";
 
-function CarouselComponent() {
+function CarouselComponent(props) {
+  console.log(props.data.image);
   return (
     <>
-      <div className="d-flex">
-        <Carousel className="d-flex ">
+      <Carousel className="d-flex w-100">
+        {props.data.map((data, index) => (
           <Carousel.Item interval={5000}>
-            <img className="d-block w-100" src={img_a} alt="First slide" />
+            <img
+              className="d-block w-100"
+              src={data.image.fields.file.url}
+              alt="First slide"
+            />
           </Carousel.Item>
-          <Carousel.Item interval={5000}>
-            <img className="d-block w-100" src={img_b} alt="Second slide" />
-          </Carousel.Item>
-          <Carousel.Item interval={5000}>
-            <img className="d-block w-100" src={img_c} alt="Thir slide" />
-          </Carousel.Item>
-        </Carousel>
-      </div>
+        ))}
+      </Carousel>
     </>
   );
-}
+} /*<img
+                className="d-block w-100"
+                src={data.image.fields.file.url}
+                alt="First slide"
+              />*/
 
 export default CarouselComponent;
