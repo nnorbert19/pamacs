@@ -15,7 +15,7 @@ function News() {
       </div>
       <div className="container">
         <div className="row">
-          {news.map((news, index) => (
+          {news.items.map((news, index) => (
             <NewsListerComponent key={index} news={news} />
           ))}
         </div>

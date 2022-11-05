@@ -1,16 +1,15 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
-function CarouselComponent(props) {
-  console.log(props.data.image);
+function CarouselComponent(data) {
   return (
     <>
       <Carousel className="d-flex w-100">
-        {props.data.map((data, index) => (
-          <Carousel.Item interval={5000}>
+        {data.data.items.map((data, index) => (
+          <Carousel.Item interval={5000} key={index}>
             <img
               className="d-block w-100"
-              src={data.image.fields.file.url}
+              src={data.image.url}
               alt="First slide"
             />
           </Carousel.Item>
@@ -18,10 +17,5 @@ function CarouselComponent(props) {
       </Carousel>
     </>
   );
-} /*<img
-                className="d-block w-100"
-                src={data.image.fields.file.url}
-                alt="First slide"
-              />*/
-
+}
 export default CarouselComponent;

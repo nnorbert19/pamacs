@@ -16,6 +16,7 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import { ContentfulProvider } from "./ContentfulContext";
+import ShowNews from "./pages/News/ShowNews";
 
 export default function App() {
   return (
@@ -26,7 +27,10 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="rolunk" element={<AboutUs />} />
             <Route path="kutyaink" element={<OurDogs />} />
-            <Route path="hirek" element={<News />} />
+            <Route path="hirek">
+              <Route index element={<News />} />
+              <Route path=":id" element={<ShowNews />} />
+            </Route>
             <Route path="tervezett-alom" element={<PlannedLitter />} />
             <Route path="elerheto-kolykok" element={<AvailablePuppies />} />
             <Route path="almok" element={<Litters />} />

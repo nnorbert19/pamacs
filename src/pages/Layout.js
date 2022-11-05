@@ -7,7 +7,7 @@ function App() {
     <>
       <div className="App">
         <NavbarComponent />
-        <Outlet />
+        <Outlet className="h-100" />
         <Footer />
       </div>
     </>
