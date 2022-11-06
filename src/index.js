@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import Layout from "./pages/Layout.js";
 import Home from "./pages/Home.js";
 import AboutUs from "./pages/AboutUs";
@@ -22,6 +23,7 @@ export default function App() {
   return (
     <ContentfulProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />

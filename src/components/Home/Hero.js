@@ -7,7 +7,7 @@ function Hero() {
   const { homeCarouselImages } = useContenful();
   return (
     <>
-      <div className="w-100 h-75">
+      <div className="w-100 ">
         <div className="row w-100 m-0  mb-4 ">
           <div className="col-12 col-md-8 p-0 m-0">
             <div className="d-flex">

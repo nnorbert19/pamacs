@@ -16,7 +16,7 @@ function NavbarComponent() {
   };
   return (
     <>
-      <Navbar expand="md" variant="dark" className="w-100 Header sticky-top">
+      <Navbar expand="md" variant="dark" className="w-100 lg Header sticky-top">
         <Container fluid>
           <Navbar.Brand className="px-2">LOGO</Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-$'sm'`} />

@@ -5,17 +5,18 @@ import { useContenful } from "../../ContentfulContext";
 
 function NewsListerComponent(data) {
   const { slugify } = useContenful();
-  console.log(data);
   return (
     <>
-      <div className=" col-lg-3   col-md-4 col-sm-6">
+      <div className="col-lg-3 col-md-4 col-sm-6">
         <div className="mb-4">
           <h3 className="text-wrap">{data.news.title}</h3>
-          <h6 className="text-muted">{data.news.date}</h6>
+          <h6 className="text-muted">{data.news.date.split("T")[0]}</h6>
           <img
             className="w-100 rounded"
             src={data.news.smallImage.url}
             alt={data.news.smallImage.description}
+            as={Link}
+            to={`/hirek/${slugify(data.news.title)}`}
           />
           <p>{data.news.shortText}</p>
           <div className="d-flex justify-content-center">
