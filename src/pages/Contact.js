@@ -28,7 +28,7 @@ function Contact() {
               </div>
             </div>
           </div>
-          <div className="col-xs-12 col-sm-12 col-md-12 col-lg-7 align-items-center align-self-center order-first">
+          <div className="col-xs-12 col-sm-12 col-md-12 col-lg-7 align-items-center align-self-center order-first mb-4">
             <img className="w-100" src={image} />
           </div>
         </div>
