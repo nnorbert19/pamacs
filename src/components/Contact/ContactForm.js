@@ -44,7 +44,7 @@ function ContactForm() {
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Üzenet</Form.Label>
-          <Form.Control type="textarea" name="message" id="message" />
+          <Form.Control as="textarea" rows={3} name="message" id="message" />
         </Form.Group>
         <Form.Group className="d-flex justify-content-center align-items-center">
           <Button type="submit" value="Send">
