@@ -6,72 +6,86 @@ export function useContenful() {
   return useContext(ContentfulContext);
 }
 
-export function ContentfulProvider({ children }) {
-  const [loading, setLoading] = useState(true);
-  const [news, setNews] = useState([]);
-  const [homeCarouselImages, setHomeCarouselImages] = useState([]);
-  var contentful = require("contentful");
-
-  var client = contentful.createClient({
-    space: process.env.REACT_APP_SPACE,
-    accessToken: process.env.REACT_APP_ACCESSTOKEN,
-  });
-
-  async function getNews() {
-    try {
-      setLoading(true);
-      const entries = await client.getEntries({
-        content_type: "news",
-        select: "fields",
-      });
-
-      const sanitizedEntries = entries.items.map((item) => {
-        const news = item.fields;
-        return {
-          ...item.fields,
-          news,
-        };
-      });
-      setLoading(false);
-      return sanitizedEntries;
-    } catch (error) {
-      setLoading(false);
-      console.log(error);
+const query = `query {
+  homeImageSliderCollection {
+    items {
+      image {
+        url
+      }
     }
   }
-  async function getHomeCarouselImages() {
-    try {
-      setLoading(true);
-      const entries = await client.getEntries({
-        content_type: "homeImageSlider",
-        select: "fields",
-      });
-
-      const sanitizedEntries = entries.items.map((item) => {
-        const images = item.fields;
-        return {
-          ...item.fields,
-          images,
-        };
-      });
-      setLoading(false);
-      return sanitizedEntries;
-    } catch (error) {
-      setLoading(false);
-      console.log(error);
+  newsCollection {
+    items {
+      title
+      smallImage {
+        url
+      }
+      date
+      shortText
+      text {
+        json
+      }
+      imagesCollection {
+        items {
+          url
+        }
+      }
     }
+  }
+}
+
+`;
+
+export function ContentfulProvider({ children }) {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState();
+  const [news, setNews] = useState();
+  const [homeCarouselImages, setHomeCarouselImages] = useState();
+
+  async function fetchData() {
+    const response = await fetch(
+      `https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_SPACE}/environments/master`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_ACCESSTOKEN}`,
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({ query }),
+      }
+    );
+    const body = await response.json();
+    setLoading(false);
+    setHomeCarouselImages(body.data.homeImageSliderCollection);
+    setNews(body.data.newsCollection);
+    return body.data;
   }
 
   useEffect(() => {
-    getNews().then((response) => setNews(response));
-    getHomeCarouselImages().then((response) => setHomeCarouselImages(response));
-    console.log(homeCarouselImages);
+    setLoading(true);
+    fetchData().then((response) => setData(response));
   }, []);
 
+  const slugify = (str) =>
+    str
+      .replace(/[öÖ]/g, "o")
+      .replace(/[üÜ]/g, "u")
+      .replace(/[óÓ]/g, "o")
+      .replace(/[őŐ]/g, "o")
+      .replace(/[úÚ]/g, "u")
+      .replace(/[éÉ]/g, "e")
+      .replace(/[áÁ]/g, "a")
+      .replace(/[űŰ]/g, "u")
+      .replace(/[íÍ]/g, "i")
+      .toLowerCase()
+      .trim()
+      .replace(/[\s_-]+/g, "-")
+      .replace(/^-+|-+$/g, "");
   const value = {
     news,
     homeCarouselImages,
     loading,
+    slugify,
   };
   return (
     <ContentfulContext.Provider value={value}>

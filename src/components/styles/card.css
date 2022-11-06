@@ -1,6 +1,8 @@
 .card {
+  text-decoration: none;
+  color: black;
   display: block;
-  height: 600px;
+  height: 500px;
   max-width: 300px;
   margin-bottom: 20px;
   line-height: 1.4;

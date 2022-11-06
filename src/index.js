@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import Layout from "./pages/Layout.js";
 import Home from "./pages/Home.js";
 import AboutUs from "./pages/AboutUs";
@@ -16,17 +17,22 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import { ContentfulProvider } from "./ContentfulContext";
+import ShowNews from "./pages/News/ShowNews";
 
 export default function App() {
   return (
     <ContentfulProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="rolunk" element={<AboutUs />} />
             <Route path="kutyaink" element={<OurDogs />} />
-            <Route path="hirek" element={<News />} />
+            <Route path="hirek">
+              <Route index element={<News />} />
+              <Route path=":id" element={<ShowNews />} />
+            </Route>
             <Route path="tervezett-alom" element={<PlannedLitter />} />
             <Route path="elerheto-kolykok" element={<AvailablePuppies />} />
             <Route path="almok" element={<Litters />} />

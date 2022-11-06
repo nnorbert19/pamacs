@@ -70,6 +70,8 @@ h3 {
 .Header {
   background-color: var(--header);
   color: white;
+  --bs-navbar-color: rgba(255, 255, 255, 0.75);
+  --bs-navbar-hover-color: rgba(255, 255, 255, 1);
 }
 
 .footer {
@@ -84,9 +86,14 @@ code {
 }
 
 .container {
-  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+@media (max-width: 767px) {
+  .hero-text {
+    height: 150px;
+  }
 }

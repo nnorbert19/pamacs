@@ -73,8 +73,8 @@ function News() {
           <span />
         </div>
         <Slider {...settings} className="my-2 py-3">
-          {news.map((news, index) => (
-            <NewsCardComponent key={index} news={news} />
+          {news.items.map((data, index) => (
+            <NewsCardComponent key={index} data={data} />
           ))}
         </Slider>
       </div>

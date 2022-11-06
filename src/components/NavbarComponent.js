@@ -16,13 +16,14 @@ function NavbarComponent() {
   };
   return (
     <>
-      <Navbar expand="lg" variant="dark" className="w-100 Header sticky-top">
+      <Navbar expand="md" variant="dark" className="w-100 lg Header sticky-top">
         <Container fluid>
           <Navbar.Brand className="px-2">LOGO</Navbar.Brand>
-          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-$'lg'`} />
+          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-$'sm'`} />
           <Navbar.Offcanvas
-            id={`offcanvasNavbar-expand-$'lg'`}
-            aria-labelledby={`offcanvasNavbarLabel-expand-$'lg'`}
+            className="offcanvas-lg"
+            id={`offcanvasNavbar-expand-$'md'`}
+            aria-labelledby={`offcanvasNavbarLabel-expand-$'sm'`}
             placement="end"
           >
             <Offcanvas.Header closeButton></Offcanvas.Header>
@@ -43,7 +44,7 @@ function NavbarComponent() {
 
                 <NavDropdown
                   title="Kölykök"
-                  id={`offcanvasNavbarDropdown1-expand-$'lg'`}
+                  id={`offcanvasNavbarDropdown1-expand-$'sm'`}
                   show={show}
                   onMouseEnter={showDropdown}
                   onMouseLeave={hideDropdown}
