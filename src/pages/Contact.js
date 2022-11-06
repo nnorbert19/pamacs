@@ -1,6 +1,7 @@
 import React from "react";
 import ContactForm from "../components/Contact/ContactForm";
 import image from "../images/a.jpg";
+import paw from "../images/dog-paw.svg";
 
 function Contact() {
   return (
@@ -18,9 +19,18 @@ function Contact() {
         <div className="row align-self-center">
           <div className="col-lg-5 col-md-10">
             <h3>Czinege Boglárka</h3>
-            <p className="ps-3">cím</p>
-            <p className="ps-3">telefon</p>
-            <p className="ps-3 mb-4">email</p>
+            <p className="ps-3">
+              <img src={paw} style={{ width: "1rem" }} alt="paw-placeholder" />{" "}
+              cím
+            </p>
+            <p className="ps-3">
+              <img src={paw} style={{ width: "1rem" }} alt="paw-placeholder" />{" "}
+              telefon
+            </p>
+            <p className="ps-3 mb-4">
+              <img src={paw} style={{ width: "1rem" }} alt="paw-placeholder" />{" "}
+              email
+            </p>
             <div className="">
               <div>
                 <h3>Írjon nekünk!</h3>
