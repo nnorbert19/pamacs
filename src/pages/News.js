@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useContenful } from "../ContentfulContext";
 import NewsListerComponent from "../components/News/NewsListerComponent";
 
