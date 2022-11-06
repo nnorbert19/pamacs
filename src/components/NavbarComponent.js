@@ -14,31 +14,48 @@ function NavbarComponent() {
   const hideDropdown = (e) => {
     setShow(false);
   };
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleClose = () => setMenuOpen(false);
   return (
     <>
-      <Navbar expand="md" variant="dark" className="w-100 lg Header sticky-top">
+      <Navbar
+        collapseOnSelect="true"
+        expand="md"
+        variant="dark"
+        className="w-100 lg Header sticky-top"
+      >
         <Container fluid>
           <Navbar.Brand className="px-2">LOGO</Navbar.Brand>
-          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-$'sm'`} />
+          <Navbar.Toggle
+            aria-controls={`offcanvasNavbar-expand-$'sm'`}
+            onClick={toggleMenu}
+          />
           <Navbar.Offcanvas
-            className="offcanvas-lg"
+            className="offcanvas-md"
             id={`offcanvasNavbar-expand-$'md'`}
             aria-labelledby={`offcanvasNavbarLabel-expand-$'sm'`}
             placement="end"
+            restoreFocus={false}
+            show={menuOpen}
+            onHide={handleClose}
           >
             <Offcanvas.Header closeButton></Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-center flex-grow-1 pe-3">
-                <Nav.Link as={Link} to="/">
+                <Nav.Link as={Link} to="/" onClick={toggleMenu}>
                   Kezdőlap
                 </Nav.Link>
-                <Nav.Link as={Link} to="/rolunk">
+                <Nav.Link as={Link} to="/rolunk" onClick={toggleMenu}>
                   Rólunk
                 </Nav.Link>
-                <Nav.Link as={Link} to="/kutyaink">
+                <Nav.Link as={Link} to="/kutyaink" onClick={toggleMenu}>
                   Kutyáink
                 </Nav.Link>
-                <Nav.Link as={Link} to="/hirek">
+                <Nav.Link as={Link} to="/hirek" onClick={toggleMenu}>
                   Hírek
                 </Nav.Link>
 
@@ -49,21 +66,29 @@ function NavbarComponent() {
                   onMouseEnter={showDropdown}
                   onMouseLeave={hideDropdown}
                 >
-                  <NavDropdown.Item as={Link} to="/tervezett-alom">
+                  <NavDropdown.Item
+                    as={Link}
+                    to="/tervezett-alom"
+                    onClick={toggleMenu}
+                  >
                     Tervezett alom
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/elerheto-kolykok">
+                  <NavDropdown.Item
+                    as={Link}
+                    to="/elerheto-kolykok"
+                    onClick={toggleMenu}
+                  >
                     Elérhető kölykök
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/almok">
+                  <NavDropdown.Item as={Link} to="/almok" onClick={toggleMenu}>
                     Almok
                   </NavDropdown.Item>
                 </NavDropdown>
 
-                <Nav.Link as={Link} to="/galeria">
+                <Nav.Link as={Link} to="/galeria" onClick={toggleMenu}>
                   Galéria
                 </Nav.Link>
-                <Nav.Link as={Link} to="/kapcsolat">
+                <Nav.Link as={Link} to="/kapcsolat" onClick={toggleMenu}>
                   Kapcsolat
                 </Nav.Link>
               </Nav>
