@@ -46,16 +46,16 @@ function NavbarComponent() {
             <Offcanvas.Header closeButton></Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-center flex-grow-1 pe-3">
-                <Nav.Link as={Link} to="/" onClick={toggleMenu}>
+                <Nav.Link as={Link} to="/" onClick={handleClose}>
                   Kezdőlap
                 </Nav.Link>
-                <Nav.Link as={Link} to="/rolunk" onClick={toggleMenu}>
+                <Nav.Link as={Link} to="/rolunk" onClick={handleClose}>
                   Rólunk
                 </Nav.Link>
-                <Nav.Link as={Link} to="/kutyaink" onClick={toggleMenu}>
+                <Nav.Link as={Link} to="/kutyaink" onClick={handleClose}>
                   Kutyáink
                 </Nav.Link>
-                <Nav.Link as={Link} to="/hirek" onClick={toggleMenu}>
+                <Nav.Link as={Link} to="/hirek" onClick={handleClose}>
                   Hírek
                 </Nav.Link>
 
@@ -69,26 +69,26 @@ function NavbarComponent() {
                   <NavDropdown.Item
                     as={Link}
                     to="/tervezett-alom"
-                    onClick={toggleMenu}
+                    onClick={handleClose}
                   >
                     Tervezett alom
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
                     to="/elerheto-kolykok"
-                    onClick={toggleMenu}
+                    onClick={handleClose}
                   >
                     Elérhető kölykök
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/almok" onClick={toggleMenu}>
+                  <NavDropdown.Item as={Link} to="/almok" onClick={handleClose}>
                     Almok
                   </NavDropdown.Item>
                 </NavDropdown>
 
-                <Nav.Link as={Link} to="/galeria" onClick={toggleMenu}>
+                <Nav.Link as={Link} to="/galeria" onClick={handleClose}>
                   Galéria
                 </Nav.Link>
-                <Nav.Link as={Link} to="/kapcsolat" onClick={toggleMenu}>
+                <Nav.Link as={Link} to="/kapcsolat" onClick={handleClose}>
                   Kapcsolat
                 </Nav.Link>
               </Nav>
