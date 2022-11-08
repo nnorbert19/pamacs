@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import "../styles/card.css";
 import "../styles/slick.css";
 import "../styles/slick-theme.css";
+import { Card } from "react-bootstrap";
 
 function PreviousBtn(props) {
   const { className, onClick } = props;

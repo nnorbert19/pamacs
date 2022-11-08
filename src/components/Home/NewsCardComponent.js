@@ -6,7 +6,7 @@ import { useContenful } from "../../ContentfulContext";
 function NewsCardComponent(data) {
   const { slugify } = useContenful();
   return (
-    <div className="d-flex w-100 h-100 justify-content-center">
+    <div className="d-flex w-100 h-100 justify-content-center align-item-stretch">
       <Card
         className="card d-flex"
         as={Link}
