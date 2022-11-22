@@ -7,7 +7,6 @@ import Slider from "react-slick";
 import "../styles/card.css";
 import "../styles/slick.css";
 import "../styles/slick-theme.css";
-import { Card } from "react-bootstrap";
 
 function PreviousBtn(props) {
   const { className, onClick } = props;
@@ -67,7 +66,7 @@ function News() {
   };
   return (
     <>
-      <div className="container">
+      <div className="d-flex flex-column justify-content-center align-items-center w-100 ">
         <div className="divider">
           <span />
           <h1>Hírek</h1>

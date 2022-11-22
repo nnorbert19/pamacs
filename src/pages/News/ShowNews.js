@@ -32,15 +32,17 @@ function ShowNews() {
             {documentToReactComponents(data.text.json)}
           </div>
           <div className="container row m-3 justify-content-center">
-            {data.imagesCollection &&
-              data.imagesCollection.items.map((images, index) => (
-                <ImageLoader key={index} data={images} />
-              ))}
+            {data.imagesCollection && (
+              <ImageLoader data={data.imagesCollection.items} />
+            )}
           </div>
         </div>
       </div>
     </>
   );
 }
+/*              data.imagesCollection.items.map((images, index) => (
+                <ImageLoader key={index} data={images} />
+              ))}*/
 
 export default ShowNews;
