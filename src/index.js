@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ContentfulProvider } from "./ContentfulContext";
 import ScrollToTop from "./components/ScrollToTop";
 import Layout from "./pages/Layout.js";
 import Home from "./pages/Home.js";
@@ -16,7 +17,6 @@ import Litters from "./pages/Litters";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
-import { ContentfulProvider } from "./ContentfulContext";
 import ShowNews from "./pages/News/ShowNews";
 
 export default function App() {

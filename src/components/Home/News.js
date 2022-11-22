@@ -66,7 +66,7 @@ function News() {
   };
   return (
     <>
-      <div className="d-flex flex-column justify-content-center align-items-center w-100">
+      <div className="d-flex flex-column justify-content-center align-items-center w-100 ">
         <div className="divider">
           <span />
           <h1>Hírek</h1>

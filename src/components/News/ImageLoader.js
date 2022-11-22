@@ -1,20 +1,30 @@
 import React, { useState } from "react";
+import { Carousel } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 
 function ImageLoader(data) {
   const [show, setShow] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
+  const handleShow = (index) => {
+    setShow(true);
+    setActiveIndex(index);
+  };
+
   return (
     <>
-      <div className="col-xs-12 col-sm-12 col-md-6 col-lg-3 mb-3">
-        <img
-          className="d-block w-100 news-image"
-          src={data.data.url}
-          onClick={handleShow}
-        />
-      </div>
+      {data.data.map((images, index) => (
+        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-3 mb-3">
+          <img
+            className="d-block w-100 news-image"
+            src={images.url}
+            key={index}
+            onClick={() => handleShow(index)}
+          />
+        </div>
+      ))}
 
       <Modal
         size="lg"
@@ -25,11 +35,17 @@ function ImageLoader(data) {
         onHide={handleClose}
       >
         <Modal.Body>
-          <img className="w-100" src={data.data.url} />
+          <Carousel defaultActiveIndex={activeIndex}>
+            {data.data.map((images, index) => (
+              <Carousel.Item>
+                <img className="w-100" src={images.url} key={index} />
+              </Carousel.Item>
+            ))}
+          </Carousel>
         </Modal.Body>
       </Modal>
     </>
   );
 }
-
+/*<img className="w-100" src={data.data.url} />*/
 export default ImageLoader;

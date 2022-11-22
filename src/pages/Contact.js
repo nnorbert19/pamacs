@@ -6,22 +6,20 @@ import paw from "../images/dog-paw.svg";
 function Contact() {
   return (
     <>
-      <div>
-        <div className="d-flex justify-content-center mx-5">
-          <div className="divider">
-            <span />
-            <h1>Kapcsolat</h1>
-            <span />
-          </div>
+      <div className="d-flex justify-content-center w-100 my-4">
+        <div className="divider">
+          <span />
+          <h1>Kapcsolat</h1>
+          <span />
         </div>
       </div>
-      <div className="container w-75">
-        <div className="row align-self-center">
+      <div className="container">
+        <div className="row align-self-center mb-5">
           <div className="col-lg-5 col-md-10">
             <h3>Czinege Boglárka</h3>
             <p className="ps-3">
               <img src={paw} style={{ width: "1rem" }} alt="paw-placeholder" />{" "}
-              cím
+              5000 - Szolnok
             </p>
             <p className="ps-3">
               <img src={paw} style={{ width: "1rem" }} alt="paw-placeholder" />{" "}
