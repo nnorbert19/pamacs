@@ -4,7 +4,7 @@ import Carousel from "react-bootstrap/Carousel";
 function CarouselComponent(data) {
   return (
     <>
-      <Carousel className="d-flex w-100">
+      <Carousel fade className="d-flex w-100">
         {data.data.items.map((data, index) => (
           <Carousel.Item interval={5000} key={index}>
             <img

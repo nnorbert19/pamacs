@@ -10,7 +10,7 @@ function NewsListerComponent(data) {
       <div className="col-lg-3 col-md-4 col-sm-6 align-item-stretch">
         <div className="mb-4 w-100 align-item-stretch">
           <h3 className="text-wrap">{data.news.title}</h3>
-          <h6 className="text-muted">{data.news.date.split("T")[0]}</h6>
+          <h6 className="text-muted">{data.news.date?.split("T")[0]}</h6>
           <img
             className="w-100 rounded"
             src={data.news.smallImage.url}

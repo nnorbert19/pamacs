@@ -27,7 +27,7 @@ function ShowNews() {
           <span />
         </div>
         <div className="container d-flex flex-column align-items-center">
-          <h6 className="text-muted">{data.date.split("T")[0]}</h6>
+          <h6 className="text-muted">{data.date?.split("T")[0]}</h6>
           <div className=" m-2">
             {documentToReactComponents(data.text.json)}
           </div>
@@ -41,8 +41,5 @@ function ShowNews() {
     </>
   );
 }
-/*              data.imagesCollection.items.map((images, index) => (
-                <ImageLoader key={index} data={images} />
-              ))}*/
 
 export default ShowNews;

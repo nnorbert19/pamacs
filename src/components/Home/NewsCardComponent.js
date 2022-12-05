@@ -17,7 +17,7 @@ function NewsCardComponent(data) {
         <Card.Body>
           <Card.Title>
             <h3>{data.data.title}</h3>
-            <h6 className="text-muted">{data.data.date.split("T")[0]}</h6>
+            <h6 className="text-muted">{data.data.date?.split("T")[0]}</h6>
           </Card.Title>
           <Card.Text>{data.data.shortText}</Card.Text>
         </Card.Body>

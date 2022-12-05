@@ -12,15 +12,13 @@ function ImageLoader(data) {
     setShow(true);
     setActiveIndex(index);
   };
-
   return (
     <>
       {data.data.map((images, index) => (
-        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-3 mb-3">
+        <div key={index} className="col-xs-12 col-sm-12 col-md-6 col-lg-3 mb-3">
           <img
             className="d-block w-100 news-image"
             src={images.url}
-            key={index}
             onClick={() => handleShow(index)}
           />
         </div>
@@ -37,8 +35,8 @@ function ImageLoader(data) {
         <Modal.Body>
           <Carousel defaultActiveIndex={activeIndex}>
             {data.data.map((images, index) => (
-              <Carousel.Item>
-                <img className="w-100" src={images.url} key={index} />
+              <Carousel.Item key={index}>
+                <img className="w-100" src={images.url} />
               </Carousel.Item>
             ))}
           </Carousel>
